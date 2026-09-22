@@ -211,7 +211,7 @@
                     <div class="border-b border-litro-border/60 pb-3 flex justify-between items-center">
                         <span class="text-xs font-mono uppercase text-gray-400" data-i18n="plant_status">Статус завода</span>
                         <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Активен
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> <span data-i18n="status_active">Активен</span>
                         </span>
                     </div>
                     <div class="grid grid-cols-2 gap-4 text-center">
@@ -296,17 +296,17 @@
                 <div>
                     <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="cat_cars">Машины</h4>
                     <ul class="space-y-1.5 text-gray-400 font-sans">
-                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Городские & Кроссоверы</a></li>
-                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Электромобили (EV)</a></li>
-                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Премиум & Спорт</a></li>
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400" data-i18n="footer_cars_1">Городские & Кроссоверы</a></li>
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400" data-i18n="footer_cars_2">Электромобили (EV)</a></li>
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400" data-i18n="footer_cars_3">Премиум & Спорт</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="cat_buses">Автобусы & Грузовики</h4>
+                    <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="footer_buses_trucks">Автобусы & Грузовики</h4>
                     <ul class="space-y-1.5 text-gray-400 font-sans">
-                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400">Городские Электробусы</a></li>
-                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400">Туристические COACH</a></li>
-                        <li><a href="#" onclick="switchCategory('trucks')" class="hover:text-cyan-400">Тяжелые Грузовики</a></li>
+                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400" data-i18n="footer_bt_1">Городские Электробусы</a></li>
+                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400" data-i18n="footer_bt_2">Туристические COACH</a></li>
+                        <li><a href="#" onclick="switchCategory('trucks')" class="hover:text-cyan-400" data-i18n="footer_bt_3">Тяжелые Грузовики</a></li>
                     </ul>
                 </div>
                 <div>
@@ -345,10 +345,11 @@
                 stat_tech: "EV & Hydro Platforms",
                 stat_export: "Мировой экспорт",
                 plant_status: "Статус завода",
+                status_active: "Активен",
                 units_produced: "Выпущено авто",
                 active_lines: "Линий сборки",
                 filter_hint: "Выберите класс техники для просмотра параметров и комплектаций",
-                models_available: "моделей в наличии",
+                models_available: "моделей в каталоге",
                 btn_all: "Все модели",
                 price_from: "Цена от",
                 spec_power: "Мощность",
@@ -361,10 +362,24 @@
                 empty_title: "Модели не найдены",
                 empty_desc: "Попробуйте выбрать другую подкатегорию",
                 footer_about: "Официальный машиностроительный комбинат LITROGANT. Производство мирового уровня, электромобильность и инновационные платформы.",
+                footer_buses_trucks: "Автобусы & Грузовики",
+                footer_cars_1: "Городские & Кроссоверы",
+                footer_cars_2: "Электромобили (EV)",
+                footer_cars_3: "Премиум & Спорт",
+                footer_bt_1: "Городские Электробусы",
+                footer_bt_2: "Туристические COACH",
+                footer_bt_3: "Тяжелые Грузовики",
                 footer_contact: "Контакты Завода",
                 modal_config_title: "Конфигурация и заказ техники",
                 modal_specs_tab: "Технические данные",
                 modal_order_tab: "Оформить заявку на завод",
+                modal_base_cost: "Базовая стоимость завода",
+                modal_label_name: "Ваше имя / Компания",
+                modal_label_phone: "Телефон или Email",
+                modal_label_comment: "Комментарий к комплектации",
+                modal_placeholder_name: "ООО 'АвтоТранс' или имя",
+                modal_placeholder_comment: "Цвет, количество единиц, спецпакет...",
+                modal_btn_submit: "Отправить заявку на завод",
                 modal_success_msg: "Заявка успешно принята в отдел продаж LITROGANT!"
             },
             en: {
@@ -378,6 +393,7 @@
                 stat_tech: "EV & Hydrogen Platforms",
                 stat_export: "Global Export",
                 plant_status: "Plant Status",
+                status_active: "Active",
                 units_produced: "Units Produced",
                 active_lines: "Assembly Lines",
                 filter_hint: "Select a vehicle class to view specifications and options",
@@ -394,24 +410,38 @@
                 empty_title: "No models found",
                 empty_desc: "Try selecting a different subcategory",
                 footer_about: "Official LITROGANT Industrial Automotive Complex. World-class manufacturing, electric mobility, and innovative platforms.",
+                footer_buses_trucks: "Buses & Trucks",
+                footer_cars_1: "City & Crossovers",
+                footer_cars_2: "Electric Vehicles (EV)",
+                footer_cars_3: "Premium & Sport",
+                footer_bt_1: "City Electrobuses",
+                footer_bt_2: "Touring COACH",
+                footer_bt_3: "Heavy Duty Trucks",
                 footer_contact: "Plant Contacts",
                 modal_config_title: "Vehicle Configuration & Factory Order",
                 modal_specs_tab: "Technical Specifications",
                 modal_order_tab: "Submit Factory Application",
+                modal_base_cost: "Factory Base Price",
+                modal_label_name: "Your Name / Company",
+                modal_label_phone: "Phone or Email",
+                modal_label_comment: "Configuration Details / Notes",
+                modal_placeholder_name: "AutoTrans LLC or your name",
+                modal_placeholder_comment: "Color, quantity, special equipment package...",
+                modal_btn_submit: "Submit Application to Factory",
                 modal_success_msg: "Application successfully submitted to LITROGANT Sales Dept!"
             },
             lan: {
-                // 3rd language template (Lanđaĭ) - Fully expandable structure!
                 cat_cars: "Ȃđyĕmxao",
                 cat_buses: "Thoanhxao",
                 cat_trucks: "Ax͜gtratxao",
                 hero_badge: "LANĐAĬ NEXT-GEN AUTOMOBILE",
                 hero_title1: "PLANT",
-                hero_desc: "LITROGANT factory of Lanđaĭ region. High-tech motor vehicles, city buses and heavy trucks.",
+                hero_desc: "LITROGANT plant of Lanđaĭ region. High-tech motor vehicles, city buses and heavy trucks. Innovation without compromises.",
                 stat_warranty: "7-Yr / 300k km Lanđaĭ",
                 stat_tech: "Hydro & EV Tech",
                 stat_export: "Export Lanđaĭ",
                 plant_status: "Plant Status",
+                status_active: "Active",
                 units_produced: "Built Units",
                 active_lines: "Lines Active",
                 filter_hint: "Lanđaĭ vehicle specs and options filter",
@@ -419,7 +449,7 @@
                 btn_all: "All Lanđaĭ Models",
                 price_from: "Price from",
                 spec_power: "Power",
-                spec_range: "Range",
+                spec_range: "Range / Cons.",
                 spec_drive: "Drive",
                 spec_trans: "Gearbox",
                 spec_speed: "Max Speed",
@@ -428,11 +458,25 @@
                 empty_title: "No Lanđaĭ models",
                 empty_desc: "Choose another category",
                 footer_about: "Official LITROGANT Lanđaĭ plant manufacturing branch.",
+                footer_buses_trucks: "Thoanhxao & Ax͜gtratxao",
+                footer_cars_1: "City & Crossovers",
+                footer_cars_2: "Electric Vehicles (EV)",
+                footer_cars_3: "Premium & Sport",
+                footer_bt_1: "City Electrobuses",
+                footer_bt_2: "Touring COACH",
+                footer_bt_3: "Heavy Duty Trucks",
                 footer_contact: "Lanđaĭ HQ",
                 modal_config_title: "Lanđaĭ Factory Order",
-                modal_specs_tab: "Specs",
-                modal_order_tab: "Order",
-                modal_success_msg: "Order received!"
+                modal_specs_tab: "Technical Specs",
+                modal_order_tab: "Factory Application",
+                modal_base_cost: "Base Price",
+                modal_label_name: "Name / Company",
+                modal_label_phone: "Phone / Email",
+                modal_label_comment: "Order Notes",
+                modal_placeholder_name: "Name or Company",
+                modal_placeholder_comment: "Color, options, details...",
+                modal_btn_submit: "Send Order to Factory",
+                modal_success_msg: "Order successfully received at LITROGANT!"
             }
         };
 
@@ -473,7 +517,7 @@
         };
 
         // ==========================================
-        // VEHICLE CATALOG DATA
+        // VEHICLE CATALOG DATA WITH PER-LANGUAGE DETAILS (TRANSLATIONS, PHOTOS & CURRENCIES)
         // ==========================================
         const vehiclesData = [
             // --- CARS (МАШИНЫ) ---
@@ -482,90 +526,250 @@
                 category: 'cars',
                 subcategoryId: 'city',
                 modelCode: 'L1',
-                name: 'LANDRIDER',
-                tagline: 'Универсальный городской хэтчбек нового поколения',
-                price: '₽2 490 000',
-                image: 'https://1s4oyld5dc.ucarecd.net/a3dac9df-1910-4178-a381-36cba410b7e0/',
-                specs: {
-                    power: '180 Л.С.',
-                    range: '6.2 L / 100 км',
-                    drive: 'Передний (FWD)',
-                    trans: '8-АКПП HydroShift',
-                    speed: '215 км/ч'
-                },
-                desc: 'L1 LANDRIDER — это идеальный баланс компактности и комфорта для ежедневных городских поездок. Оснащен интеллектуальным ассистентом LITROGANT Pilot.'
+                langData: {
+                    ru: {
+                        name: 'LANDRIDER',
+                        tagline: 'Универсальный городской хэтчбек нового поколения',
+                        price: '2 490 000 ₽',
+                        image: 'https://1s4oyld5dc.ucarecd.net/a3dac9df-1910-4178-a381-36cba410b7e0/',
+                        specs: {
+                            power: '180 Л.С.',
+                            range: '6.2 L / 100 км',
+                            drive: 'Передний (FWD)',
+                            trans: '8-АКПП HydroShift',
+                            speed: '215 км/ч'
+                        },
+                        desc: 'L1 LANDRIDER — это идеальный баланс компактности и комфорта для ежедневных городских поездок. Оснащен интеллектуальным ассистентом LITROGANT Pilot.'
+                    },
+                    en: {
+                        name: 'LANDRIDER GLOBAL',
+                        tagline: 'Next-generation versatile urban hatchback',
+                        price: '$28,500',
+                        image: 'https://1s4oyld5dc.ucarecd.net/a3dac9df-1910-4178-a381-36cba410b7e0/',
+                        specs: {
+                            power: '180 HP',
+                            range: '38 MPG (6.2L/100km)',
+                            drive: 'Front-Wheel Drive (FWD)',
+                            trans: '8-Speed HydroShift Auto',
+                            speed: '133 mph'
+                        },
+                        desc: 'L1 LANDRIDER offers a perfect balance of compact size and premium comfort for daily city commutes. Equipped with LITROGANT Pilot AI suite.'
+                    },
+                    lan: {
+                        name: 'LANDRIDER LANĐAĬ',
+                        tagline: 'Ȃđyĕmxao landraī xe lanđaī',
+                        price: '85 000 ₭',
+                        image: 'https://1s4oyld5dc.ucarecd.net/a3dac9df-1910-4178-a381-36cba410b7e0/',
+                        specs: {
+                            power: '180 PK',
+                            range: '6.2 L / 100 km',
+                            drive: 'FWD Lanđaī',
+                            trans: '8-Auto HydroShift',
+                            speed: '215 km/h'
+                        },
+                        desc: 'L1 LANDRIDER — Lanđaī city car with advanced pilot control and efficient engine.'
+                    }
+                }
             },
             {
                 id: 'car-2',
                 category: 'cars',
                 subcategoryId: 'crossover',
                 modelCode: 'L2',
-                name: 'CITYLITE SUV',
-                tagline: 'Интеллектуальный городской кроссовер',
-                price: '$34,900',
-                image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '245 Л.С.',
-                    range: '7.5 L / 100 км',
-                    drive: 'Полный (AWD Intelligent)',
-                    trans: '9-АКПП Dual-Clutch',
-                    speed: '230 км/ч'
-                },
-                desc: 'Высокий клиренс, адаптивная пневмоподвеска и увеличенный багажный отсек для любых путешествий.'
+                langData: {
+                    ru: {
+                        name: 'CITYLITE SUV',
+                        tagline: 'Интеллектуальный городской кроссовер',
+                        price: '3 200 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '245 Л.С.',
+                            range: '7.5 L / 100 км',
+                            drive: 'Полный (AWD Intelligent)',
+                            trans: '9-АКПП Dual-Clutch',
+                            speed: '230 км/ч'
+                        },
+                        desc: 'Высокий клиренс, адаптивная пневмоподвеска и увеличенный багажный отсек для любых путешествий.'
+                    },
+                    en: {
+                        name: 'CITYLITE CROSSOVER',
+                        tagline: 'Smart urban crossover for all terrains',
+                        price: '$34,900',
+                        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '245 HP',
+                            range: '31 MPG (7.5L/100km)',
+                            drive: 'Intelligent AWD',
+                            trans: '9-Speed Dual-Clutch',
+                            speed: '143 mph'
+                        },
+                        desc: 'High ground clearance, adaptive air suspension, and an expanded cargo space designed for long journeys.'
+                    },
+                    lan: {
+                        name: 'CITYLITE CROSS',
+                        tagline: 'Thoanh crossover intelligent',
+                        price: '110 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '245 PK',
+                            range: '7.5 L / 100 km',
+                            drive: 'AWD Smart',
+                            trans: '9-DCT',
+                            speed: '230 km/h'
+                        },
+                        desc: 'Lanđaī crossover vehicle built for dynamic city roads and all weather conditions.'
+                    }
+                }
             },
             {
                 id: 'car-3',
                 category: 'cars',
                 subcategoryId: 'ev',
                 modelCode: 'E1',
-                name: 'VOLTRAN EV',
-                tagline: 'Флагманский электромобиль с мгновенным откликом',
-                price: '$48,000',
-                image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '450 Л.С.',
-                    range: '620 км (WLTP)',
-                    drive: 'Полный двухмоторный',
-                    trans: '1-ступенчатый редуктор',
-                    speed: '250 км/ч'
-                },
-                desc: '100% электрическая тяга, быстрая зарядка за 18 минут до 80%, панорамная крыша и минималистичный дизайн.'
+                langData: {
+                    ru: {
+                        name: 'VOLTRAN EV',
+                        tagline: 'Флагманский электромобиль с мгновенным откликом',
+                        price: '4 500 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '450 Л.С.',
+                            range: '620 км (WLTP)',
+                            drive: 'Полный двухмоторный',
+                            trans: '1-ступенчатый редуктор',
+                            speed: '250 км/ч'
+                        },
+                        desc: '100% электрическая тяга, быстрая зарядка за 18 минут до 80%, панорамная крыша и минималистичный дизайн.'
+                    },
+                    en: {
+                        name: 'VOLTRAN EV SPORT',
+                        tagline: 'Flagship electric sedan with instant response',
+                        price: '$48,000',
+                        image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '450 HP Dual Motor',
+                            range: '385 miles (WLTP)',
+                            drive: 'Dual-Motor AWD',
+                            trans: 'Single-Speed Direct',
+                            speed: '155 mph'
+                        },
+                        desc: '100% electric propulsion, 18-minute rapid charge to 80%, panoramic roof, and sleek futuristic design.'
+                    },
+                    lan: {
+                        name: 'VOLTRAN ELEC',
+                        tagline: 'Elec-ȃđyĕm Voltran Lanđaī',
+                        price: '150 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '450 PK Elec',
+                            range: '620 km range',
+                            drive: 'Dual AWD',
+                            trans: 'Direct Drive',
+                            speed: '250 km/h'
+                        },
+                        desc: 'Full electric powertrain engineered for zero-emission performance.'
+                    }
+                }
             },
             {
                 id: 'car-4',
                 category: 'cars',
                 subcategoryId: 'premium',
                 modelCode: 'P9',
-                name: 'EXECUTIVE AURA',
-                tagline: 'Представительский седан высшего класса',
-                price: '$89,000',
-                image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '530 Л.С. V8 Biturbo',
-                    range: '9.8 L / 100 км',
-                    drive: 'Полный (AWD)',
-                    trans: '10-АКПП SmoothGlide',
-                    speed: '280 км/ч'
-                },
-                desc: 'Шумоизоляция премиум-уровня, отделка натуральным деревом и премиальная акустика LitroSound с 22 динамиками.'
+                langData: {
+                    ru: {
+                        name: 'EXECUTIVE AURA',
+                        tagline: 'Представительский седан высшего класса',
+                        price: '8 900 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '530 Л.С. V8 Biturbo',
+                            range: '9.8 L / 100 км',
+                            drive: 'Полный (AWD)',
+                            trans: '10-АКПП SmoothGlide',
+                            speed: '280 км/ч'
+                        },
+                        desc: 'Шумоизоляция премиум-уровня, отделка натуральным деревом и премиальная акустика LitroSound с 22 динамиками.'
+                    },
+                    en: {
+                        name: 'EXECUTIVE AURA LUX',
+                        tagline: 'Ultra-luxury executive flagship sedan',
+                        price: '$89,000',
+                        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '530 HP V8 Twin-Turbo',
+                            range: '24 MPG (9.8L/100km)',
+                            drive: 'Precision AWD',
+                            trans: '10-Speed Automatic',
+                            speed: '174 mph'
+                        },
+                        desc: 'Top-tier acoustic insulation, handcrafted wood interior, and 22-speaker LitroSound premium sound system.'
+                    },
+                    lan: {
+                        name: 'EXECUTIVE AURA',
+                        tagline: 'Premium class flagship sedan',
+                        price: '280 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '530 PK V8',
+                            range: '9.8 L / 100 km',
+                            drive: 'AWD Premium',
+                            trans: '10-Auto',
+                            speed: '280 km/h'
+                        },
+                        desc: 'Lanđaī executive level luxury sedan with high luxury finish.'
+                    }
+                }
             },
             {
                 id: 'car-5',
                 category: 'cars',
                 subcategoryId: 'sport',
                 modelCode: 'S7',
-                name: 'APEX GT',
-                tagline: 'Трековый суперкар, допущенный к городским дорогам',
-                price: '$115,000',
-                image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '720 Л.С.',
-                    range: '12.4 L / 100 км',
-                    drive: 'Задний (RWD Sport)',
-                    trans: '7-ступ. Робот RaceSpec',
-                    speed: '335 км/ч'
-                },
-                desc: 'Карбоновый монокок, активное аэродинамическое антикрыло и разгон от 0 до 100 км/ч всего за 2.8 секунды.'
+                langData: {
+                    ru: {
+                        name: 'APEX GT',
+                        tagline: 'Трековый суперкар, допущенный к городским дорогам',
+                        price: '11 500 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '720 Л.С.',
+                            range: '12.4 L / 100 км',
+                            drive: 'Задний (RWD Sport)',
+                            trans: '7-ступ. Робот RaceSpec',
+                            speed: '335 км/ч'
+                        },
+                        desc: 'Карбоновый монокок, активное аэродинамическое антикрыло и разгон от 0 до 100 км/ч всего за 2.8 секунды.'
+                    },
+                    en: {
+                        name: 'APEX GT SUPERCAR',
+                        tagline: 'Track-ready supercar engineered for public roads',
+                        price: '$115,000',
+                        image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '720 HP V8',
+                            range: '19 MPG (12.4L/100km)',
+                            drive: 'Rear-Wheel Drive Sport',
+                            trans: '7-Speed Race Dual-Clutch',
+                            speed: '208 mph'
+                        },
+                        desc: 'Carbon fiber monocoque chassis, active rear wing aerodynamics, and 0-60 mph acceleration in just 2.8 seconds.'
+                    },
+                    lan: {
+                        name: 'APEX GT SPORT',
+                        tagline: 'Sport track supercar Lanđaī',
+                        price: '360 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '720 PK',
+                            range: '12.4 L / 100 km',
+                            drive: 'RWD Sport',
+                            trans: '7-Speed Race',
+                            speed: '335 km/h'
+                        },
+                        desc: 'High speed performance supercar with carbon fiber body.'
+                    }
+                }
             },
 
             // --- BUSES (АВТОБУСЫ) ---
@@ -574,126 +778,350 @@
                 category: 'buses',
                 subcategoryId: 'small',
                 modelCode: 'B1',
-                name: 'URBANFLEX MINI',
-                tagline: 'Компактный маневренный автобус для узких улиц',
-                price: '$52,000',
-                image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '190 Л.С.',
-                    range: '11.5 L / 100 км',
-                    drive: 'Задний',
-                    trans: '6-АКПП HeavyDuty',
-                    speed: '120 км/ч'
-                },
-                desc: 'Вместимость 22 пассажира. Идеально подходит для пригородных и коммерческих челночных маршрутов.'
+                langData: {
+                    ru: {
+                        name: 'URBANFLEX MINI',
+                        tagline: 'Компактный маневренный автобус для узких улиц',
+                        price: '5 200 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '190 Л.С.',
+                            range: '11.5 L / 100 км',
+                            drive: 'Задний',
+                            trans: '6-АКПП HeavyDuty',
+                            speed: '120 км/ч'
+                        },
+                        desc: 'Вместимость 22 пассажира. Идеально подходит для пригородных и коммерческих челночных маршрутов.'
+                    },
+                    en: {
+                        name: 'URBANFLEX COMPACT',
+                        tagline: 'Agile passenger minibus for compact city routes',
+                        price: '$52,000',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '190 HP',
+                            range: '20 MPG (11.5L/100km)',
+                            drive: 'Rear Wheel Drive',
+                            trans: '6-Speed HD Automatic',
+                            speed: '75 mph'
+                        },
+                        desc: '22-passenger capacity. Perfectly designed for urban shuttles and suburban connectivity routes.'
+                    },
+                    lan: {
+                        name: 'URBANFLEX MINI',
+                        tagline: 'Thoanhxao mini compact',
+                        price: '160 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '190 PK',
+                            range: '11.5 L / 100 km',
+                            drive: 'Rear Drive',
+                            trans: '6-Auto HD',
+                            speed: '120 km/h'
+                        },
+                        desc: '22 seats passenger minibus engineered for city routes.'
+                    }
+                }
             },
             {
                 id: 'bus-2',
                 category: 'buses',
                 subcategoryId: 'standard',
                 modelCode: 'B2',
-                name: 'CITYLINER 12M',
-                tagline: 'Классический городской низкопольный автобус',
-                price: '$135,000',
-                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '320 Л.С.',
-                    range: '24 L / 100 км',
-                    drive: 'Задний 4x2',
-                    trans: 'Автоматическая ZF',
-                    speed: '95 км/ч'
-                },
-                desc: '12-метровый кузов, низкий пол по всей длине, откидной пандус для маломобильных граждан. Вместимость до 95 человек.'
+                langData: {
+                    ru: {
+                        name: 'CITYLINER 12M',
+                        tagline: 'Классический городской низкопольный автобус',
+                        price: '13 500 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '320 Л.С.',
+                            range: '24 L / 100 км',
+                            drive: 'Задний 4x2',
+                            trans: 'Автоматическая ZF',
+                            speed: '95 км/ч'
+                        },
+                        desc: '12-метровый кузов, низкий пол по всей длине, откидной пандус для маломобильных граждан. Вместимость до 95 человек.'
+                    },
+                    en: {
+                        name: 'CITYLINER 12M BUS',
+                        tagline: 'Standard low-floor municipal transit bus',
+                        price: '$135,000',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '320 HP Diesel',
+                            range: '9.8 MPG (24L/100km)',
+                            drive: '4x2 Rear Drive',
+                            trans: 'ZF Ecolife Automatic',
+                            speed: '60 mph'
+                        },
+                        desc: '12-meter body length, 100% low-floor design with wheelchair access ramp. Accommodates up to 95 passengers.'
+                    },
+                    lan: {
+                        name: 'CITYLINER 12M',
+                        tagline: 'Thoanhxao 12m standard',
+                        price: '420 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '320 PK',
+                            range: '24 L / 100 km',
+                            drive: '4x2 Rear',
+                            trans: 'ZF Auto',
+                            speed: '95 km/h'
+                        },
+                        desc: 'Full size 12-meter municipal bus for high passenger capacity.'
+                    }
+                }
             },
             {
                 id: 'bus-3',
                 category: 'buses',
                 subcategoryId: 'articulated',
                 modelCode: 'B3',
-                name: 'MEGACLIFF 18M',
-                tagline: 'Сочлененный автобус «гармошка» повышенной вместимости',
-                price: '$240,000',
-                image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '400 Л.С.',
-                    range: '32 L / 100 км',
-                    drive: 'Средний + Задний мост',
-                    trans: 'Автомат Allison',
-                    speed: '85 км/ч'
-                },
-                desc: '18 метров длины, вместимость до 160 пассажиров. Оснащен узлом сочленения с электронной системой стабилизации.'
+                langData: {
+                    ru: {
+                        name: 'MEGACLIFF 18M',
+                        tagline: 'Сочлененный автобус «гармошка» повышенной вместимости',
+                        price: '24 000 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '400 Л.С.',
+                            range: '32 L / 100 км',
+                            drive: 'Средний + Задний мост',
+                            trans: 'Автомат Allison',
+                            speed: '85 км/ч'
+                        },
+                        desc: '18 метров длины, вместимость до 160 пассажиров. Оснащен узлом сочленения с электронной системой стабилизации.'
+                    },
+                    en: {
+                        name: 'MEGACLIFF 18M ARTICULATED',
+                        tagline: 'High-capacity articulated bendy bus for metro lines',
+                        price: '$240,000',
+                        image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '400 HP Turbodiesel',
+                            range: '7.3 MPG (32L/100km)',
+                            drive: 'Mid + Rear Axle Drive',
+                            trans: 'Allison Automatic',
+                            speed: '53 mph'
+                        },
+                        desc: '18-meter length, carrying capacity up to 160 passengers. Features electronic articulation damping control.'
+                    },
+                    lan: {
+                        name: 'MEGACLIFF 18M',
+                        tagline: 'Thoanhxao 18m articulated',
+                        price: '750 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '400 PK',
+                            range: '32 L / 100 km',
+                            drive: 'Mid+Rear Drive',
+                            trans: 'Allison Auto',
+                            speed: '85 km/h'
+                        },
+                        desc: '18m articulated heavy transit bus for high volume routes.'
+                    }
+                }
             },
             {
                 id: 'bus-4',
                 category: 'buses',
                 subcategoryId: 'electrobus',
                 modelCode: 'BE-1',
-                name: 'ECO-CITY ELECTRIC',
-                tagline: 'Экологически чистый городской электробус',
-                price: '$210,000',
-                image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '350 кВт (475 Л.С.)',
-                    range: '380 км на одном заряде',
-                    drive: 'Электропортальный мост',
-                    trans: 'Прямой привод',
-                    speed: '90 км/ч'
-                },
-                desc: 'Нулевой выброс CO2, ультрабыстрая зарядка от пантографа за 15 минут на конечных станциях.'
+                langData: {
+                    ru: {
+                        name: 'ECO-CITY ELECTRIC',
+                        tagline: 'Экологически чистый городской электробус',
+                        price: '21 000 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '350 кВт (475 Л.С.)',
+                            range: '380 км на одном заряде',
+                            drive: 'Электропортальный мост',
+                            trans: 'Прямой привод',
+                            speed: '90 км/ч'
+                        },
+                        desc: 'Нулевой выброс CO2, ультрабыстрая зарядка от пантографа за 15 минут на конечных станциях.'
+                    },
+                    en: {
+                        name: 'ECO-CITY E-BUS',
+                        tagline: 'Zero-emission full electric city bus',
+                        price: '$210,000',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '350 kW (475 HP)',
+                            range: '236 miles range',
+                            drive: 'Electric Portal Axle',
+                            trans: 'Direct Drive',
+                            speed: '56 mph'
+                        },
+                        desc: 'Zero CO2 emissions, 15-minute ultra-fast pantograph charging at terminal stations.'
+                    },
+                    lan: {
+                        name: 'ECO-CITY ELEC',
+                        tagline: 'Elec-thoanhxao Eco-City',
+                        price: '650 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '350 kW Elec',
+                            range: '380 km range',
+                            drive: 'Elec Axle',
+                            trans: 'Direct',
+                            speed: '90 km/h'
+                        },
+                        desc: 'Clean electric bus with quick charging pantograph technology.'
+                    }
+                }
             },
             {
                 id: 'bus-5',
                 category: 'buses',
                 subcategoryId: 'hydrobus',
-                modelCode: 'BH- hydrogen',
-                name: 'HYDROCELL MAX',
-                tagline: 'Инновационный водородный автобус сверхбольшого запаса хода',
-                price: '$290,000',
-                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '300 кВт Hydro-FuelCell',
-                    range: '650 км на водороде',
-                    drive: 'Электрический AWD',
-                    trans: 'Автоматический контроллер',
-                    speed: '100 км/ч'
-                },
-                desc: 'Выхлоп — чистый водяной пар. Время заправки водородом составляет всего 8 минут.'
+                modelCode: 'BH-1',
+                langData: {
+                    ru: {
+                        name: 'HYDROCELL MAX',
+                        tagline: 'Инновационный водородный автобус сверхбольшого запаса хода',
+                        price: '29 000 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '300 кВт Hydro-FuelCell',
+                            range: '650 км на водороде',
+                            drive: 'Электрический AWD',
+                            trans: 'Автоматический контроллер',
+                            speed: '100 км/ч'
+                        },
+                        desc: 'Выхлоп — чистый водяной пар. Время заправки водородом составляет всего 8 минут.'
+                    },
+                    en: {
+                        name: 'HYDROCELL MAX H2',
+                        tagline: 'Hydrogen fuel-cell long-range city bus',
+                        price: '$290,000',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '300 kW Fuel-Cell',
+                            range: '400 miles range',
+                            drive: 'Electric AWD',
+                            trans: 'Automated Power Control',
+                            speed: '62 mph'
+                        },
+                        desc: 'Zero harmful emissions (water vapor only). Fast hydrogen refueling completed in under 8 minutes.'
+                    },
+                    lan: {
+                        name: 'HYDROCELL H2',
+                        tagline: 'Hydro-thoanhxao hydrogen',
+                        price: '900 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '300 kW H2 Cell',
+                            range: '650 km range',
+                            drive: 'Elec AWD',
+                            trans: 'Automated Control',
+                            speed: '100 km/h'
+                        },
+                        desc: 'Hydrogen fuel-cell technology with ultra fast fueling.'
+                    }
+                }
             },
             {
                 id: 'bus-6',
                 category: 'buses',
                 subcategoryId: 'coach',
                 modelCode: 'BC-7',
-                name: 'GRAND TOUR COACH',
-                tagline: 'Туристический лайнер люкс-класса для дальних рейсов',
-                price: '$195,000',
-                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '460 Л.С. Euro-6',
-                    range: '18 L / 100 км',
-                    drive: 'Задний 6x2',
-                    trans: '12-АКПП OptiCruise',
-                    speed: '130 км/ч'
-                },
-                desc: 'Анатомические кожаные кресла, индивидуальный климат-контроль, туалетная комната, Wi-Fi и мультимедиа для каждого пассажира.'
+                langData: {
+                    ru: {
+                        name: 'GRAND TOUR COACH',
+                        tagline: 'Туристический лайнер люкс-класса для дальних рейсов',
+                        price: '19 500 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '460 Л.С. Euro-6',
+                            range: '18 L / 100 км',
+                            drive: 'Задний 6x2',
+                            trans: '12-АКПП OptiCruise',
+                            speed: '130 км/ч'
+                        },
+                        desc: 'Анатомические кожаные кресла, индивидуальный климат-контроль, туалетная комната, Wi-Fi и мультимедиа для каждого пассажира.'
+                    },
+                    en: {
+                        name: 'GRAND TOUR COACH',
+                        tagline: 'Luxury intercity touring coach',
+                        price: '$195,000',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '460 HP Euro-6 Diesel',
+                            range: '13 MPG (18L/100km)',
+                            drive: '6x2 Tag Axle',
+                            trans: '12-Speed OptiCruise Auto',
+                            speed: '80 mph'
+                        },
+                        desc: 'Reclining leather seats, individual climate controls, onboard restroom, Wi-Fi, and individual entertainment displays.'
+                    },
+                    lan: {
+                        name: 'GRAND TOUR COACH',
+                        tagline: 'Thoanhxao touring luxury',
+                        price: '600 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '460 PK Euro-6',
+                            range: '18 L / 100 km',
+                            drive: '6x2 Rear',
+                            trans: '12-OptiCruise',
+                            speed: '130 km/h'
+                        },
+                        desc: 'Luxury touring coach designed for international express routes.'
+                    }
+                }
             },
             {
                 id: 'bus-7',
                 category: 'buses',
                 subcategoryId: 'van',
                 modelCode: 'BV-3',
-                name: 'SHUTTLE VAN',
-                tagline: 'Комфортабельный пассажирский микроавтобус',
-                price: '$44,000',
-                image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '170 Л.С. Дизель',
-                    range: '8.1 L / 100 км',
-                    drive: 'Задний / Полный',
-                    trans: '6-МКПП / 8-АКПП',
-                    speed: '160 км/ч'
-                },
-                desc: 'Вместимость 16+1 мест. Экономичный турбодизель и трансформируемый VIP-салон.'
+                langData: {
+                    ru: {
+                        name: 'SHUTTLE VAN',
+                        tagline: 'Комфортабельный пассажирский микроавтобус',
+                        price: '4 400 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '170 Л.С. Дизель',
+                            range: '8.1 L / 100 км',
+                            drive: 'Задний / Полный',
+                            trans: '6-МКПП / 8-АКПП',
+                            speed: '160 км/ч'
+                        },
+                        desc: 'Вместимость 16+1 мест. Экономичный турбодизель и трансформируемый VIP-салон.'
+                    },
+                    en: {
+                        name: 'SHUTTLE PASSENGER VAN',
+                        tagline: 'Versatile passenger van for executive shuttles',
+                        price: '$44,000',
+                        image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '170 HP Turbodiesel',
+                            range: '29 MPG (8.1L/100km)',
+                            drive: 'RWD / AWD Optional',
+                            trans: '8-Speed Automatic',
+                            speed: '99 mph'
+                        },
+                        desc: '16+1 seating arrangement. Highly fuel-efficient diesel engine with reconfigurable VIP interior layout.'
+                    },
+                    lan: {
+                        name: 'SHUTTLE VAN',
+                        tagline: 'Thoanh van shuttle',
+                        price: '135 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '170 PK Diesel',
+                            range: '8.1 L / 100 km',
+                            drive: 'RWD / AWD',
+                            trans: '8-Auto',
+                            speed: '160 km/h'
+                        },
+                        desc: '16+1 seat passenger van with executive cabin.'
+                    }
+                }
             },
 
             // --- TRUCKS (ГРУЗОВИКИ) ---
@@ -702,56 +1130,169 @@
                 category: 'trucks',
                 subcategoryId: 'light',
                 modelCode: 'T1',
-                name: 'CARGO LITE 35',
-                tagline: 'Легкий коммерческий грузовик для городской логистики',
-                price: '$31,000',
-                image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '160 Л.С.',
-                    range: '9.2 L / 100 км',
-                    drive: 'Задний (RWD)',
-                    trans: '6-МКПП HeavyDuty',
-                    speed: '140 км/ч'
-                },
-                desc: 'Грузоподъемность 3.5 тонны. Разрешен въезд в центр любых мегаполисов без спецпропусков.'
+                langData: {
+                    ru: {
+                        name: 'CARGO LITE 35',
+                        tagline: 'Легкий коммерческий грузовик для городской логистики',
+                        price: '3 100 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '160 Л.С.',
+                            range: '9.2 L / 100 км',
+                            drive: 'Задний (RWD)',
+                            trans: '6-МКПП HeavyDuty',
+                            speed: '140 км/ч'
+                        },
+                        desc: 'Грузоподъемность 3.5 тонны. Разрешен въезд в центр любых мегаполисов без спецпропусков.'
+                    },
+                    en: {
+                        name: 'CARGO LITE 3.5T',
+                        tagline: 'Light commercial truck for urban logistics',
+                        price: '$31,000',
+                        image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '160 HP Diesel',
+                            range: '25 MPG (9.2L/100km)',
+                            drive: 'Rear Wheel Drive',
+                            trans: '6-Speed Manual',
+                            speed: '87 mph'
+                        },
+                        desc: '3.5-ton payload rating. Unrestricted downtown access for last-mile delivery operations.'
+                    },
+                    lan: {
+                        name: 'CARGO LITE 35',
+                        tagline: 'Ax͜gtratxao lite 3.5T',
+                        price: '95 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '160 PK',
+                            range: '9.2 L / 100 km',
+                            drive: 'RWD',
+                            trans: '6-Manual',
+                            speed: '140 km/h'
+                        },
+                        desc: 'Light delivery truck with 3.5 ton payload capacity.'
+                    }
+                }
             },
             {
                 id: 'truck-2',
                 category: 'trucks',
                 subcategoryId: 'medium',
                 modelCode: 'T2',
-                name: 'MEDIUM HAULER',
-                tagline: 'Среднетоннажный грузовик с изотермическим фургоном',
-                price: '$68,000',
-                image: 'https://images.unsplash.com/photo-1586191582150-136f45228c2e?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '280 Л.С.',
-                    range: '16.5 L / 100 км',
-                    drive: '4x2 Heavy Platform',
-                    trans: '9-АКПП PowerShift',
-                    speed: '120 км/ч'
-                },
-                desc: 'Грузоподъемность 12 тонн. Спальное место для водителя, гидроборт грузоподъемностью 2000 кг.'
+                langData: {
+                    ru: {
+                        name: 'MEDIUM HAULER',
+                        tagline: 'Среднетоннажный грузовик с изотермическим фургоном',
+                        price: '6 800 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1586191582150-136f45228c2e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '280 Л.С.',
+                            range: '16.5 L / 100 км',
+                            drive: '4x2 Heavy Platform',
+                            trans: '9-АКПП PowerShift',
+                            speed: '120 км/ч'
+                        },
+                        desc: 'Грузоподъемность 12 тонн. Спальное место для водителя, гидроборт грузоподъемностью 2000 кг.'
+                    },
+                    en: {
+                        name: 'MEDIUM HAULER 12T',
+                        tagline: 'Medium-duty refrigerated delivery truck',
+                        price: '$68,000',
+                        image: 'https://images.unsplash.com/photo-1586191582150-136f45228c2e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '280 HP Turbodiesel',
+                            range: '14 MPG (16.5L/100km)',
+                            drive: '4x2 Heavy Platform',
+                            trans: '9-Speed PowerShift Auto',
+                            speed: '75 mph'
+                        },
+                        desc: '12-ton payload capacity. Sleeper berth for driver, integrated 2000kg hydraulic tail lift.'
+                    },
+                    lan: {
+                        name: 'MEDIUM HAULER',
+                        tagline: 'Ax͜gtratxao medium 12T',
+                        price: '210 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1586191582150-136f45228c2e?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '280 PK',
+                            range: '16.5 L / 100 km',
+                            drive: '4x2 HD',
+                            trans: '9-PowerShift',
+                            speed: '120 km/h'
+                        },
+                        desc: '12-ton regional cargo truck with sleeper cabin.'
+                    }
+                }
             },
             {
                 id: 'truck-3',
                 category: 'trucks',
                 subcategoryId: 'heavy',
                 modelCode: 'T8',
-                name: 'TITAN HEAVY TRACTOR',
-                tagline: 'Сверхтяжелый магистральный седельный тягач 6x4',
-                price: '$145,000',
-                image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80',
-                specs: {
-                    power: '640 Л.С. V12 Turbo',
-                    range: '28.0 L / 100 км',
-                    drive: '6x4 Heavy Duty',
-                    trans: '16-ступень Robotised',
-                    speed: '110 км/ч'
-                },
-                desc: 'Предназначен для автопоездов полной массой до 90 тонн. Высокая кабина на пневмоподушках с двойным спальным местом.'
+                langData: {
+                    ru: {
+                        name: 'TITAN HEAVY TRACTOR',
+                        tagline: 'Сверхтяжелый магистральный седельный тягач 6x4',
+                        price: '14 500 000 ₽',
+                        image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '640 Л.С. V12 Turbo',
+                            range: '28.0 L / 100 км',
+                            drive: '6x4 Heavy Duty',
+                            trans: '16-ступень Robotised',
+                            speed: '110 км/ч'
+                        },
+                        desc: 'Предназначен для автопоездов полной массой до 90 тонн. Высокая кабина на пневмоподушках с двойным спальным местом.'
+                    },
+                    en: {
+                        name: 'TITAN HEAVY TRACTOR 6x4',
+                        tagline: 'Heavy-duty long-haul highway tractor unit',
+                        price: '$145,000',
+                        image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '640 HP V12 Turbo',
+                            range: '8.4 MPG (28L/100km)',
+                            drive: '6x4 Heavy Duty AWD',
+                            trans: '16-Speed Automated',
+                            speed: '68 mph'
+                        },
+                        desc: 'Built for gross combination weights up to 90 tons. High air-suspended sleeper cab with dual bunks.'
+                    },
+                    lan: {
+                        name: 'TITAN HEAVY TRACTOR',
+                        tagline: 'Ax͜gtratxao heavy titan 6x4',
+                        price: '450 000 ₭',
+                        image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80',
+                        specs: {
+                            power: '640 PK V12',
+                            range: '28.0 L / 100 km',
+                            drive: '6x4 HD',
+                            trans: '16-Auto',
+                            speed: '110 km/h'
+                        },
+                        desc: 'Heavy duty long haul tractor rated for 90 tons total weight.'
+                    }
+                }
             }
         ];
+
+        // Helper function to get localized vehicle details
+        function getVehicleLocalized(vehicle, lang) {
+            const data = vehicle.langData[lang] || vehicle.langData.ru || vehicle.langData.en;
+            return {
+                id: vehicle.id,
+                category: vehicle.category,
+                subcategoryId: vehicle.subcategoryId,
+                modelCode: vehicle.modelCode,
+                name: data.name,
+                tagline: data.tagline,
+                price: data.price,
+                image: data.image,
+                specs: data.specs,
+                desc: data.desc
+            };
+        }
 
         // ==========================================
         // INITIALIZATION & EVENT LISTENERS
@@ -832,10 +1373,13 @@
             const emptyState = document.getElementById('empty-state');
             const countEl = document.getElementById('model-count');
 
-            let filtered = vehiclesData.filter(v => v.category === currentCategory);
+            let filteredRaw = vehiclesData.filter(v => v.category === currentCategory);
             if (currentSubcategory !== 'all') {
-                filtered = filtered.filter(v => v.subcategoryId === currentSubcategory);
+                filteredRaw = filteredRaw.filter(v => v.subcategoryId === currentSubcategory);
             }
+
+            // Map raw vehicle data to current language specifics (photos, prices, specs, names)
+            const filtered = filteredRaw.map(v => getVehicleLocalized(v, currentLang));
 
             countEl.textContent = filtered.length;
 
@@ -962,10 +1506,11 @@
         function openModal(vehicleId, isOrderFocus = false) {
             const modal = document.getElementById('vehicle-modal');
             const content = document.getElementById('modal-content');
-            const vehicle = vehiclesData.find(v => v.id === vehicleId);
+            const rawVehicle = vehiclesData.find(v => v.id === vehicleId);
 
-            if (!vehicle) return;
+            if (!rawVehicle) return;
 
+            const vehicle = getVehicleLocalized(rawVehicle, currentLang);
             const t = translations[currentLang];
 
             content.innerHTML = `
@@ -1013,24 +1558,24 @@
                     <div class="bg-litro-black/60 rounded-2xl p-5 border border-litro-border flex flex-col justify-between">
                         <div>
                             <h3 class="font-orbitron font-bold text-white text-base mb-1">${t.modal_order_tab}</h3>
-                            <p class="text-xs text-gray-400 mb-4">Базовая стоимость завода: <span class="text-cyan-400 font-mono font-bold">${vehicle.price}</span></p>
+                            <p class="text-xs text-gray-400 mb-4">${t.modal_base_cost}: <span class="text-cyan-400 font-mono font-bold">${vehicle.price}</span></p>
 
                             <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-3 text-xs">
                                 <div>
-                                    <label class="block text-gray-400 mb-1 font-mono">Ваше имя / Компания</label>
-                                    <input type="text" required placeholder="ООО 'АвтоТранс' или имя" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
+                                    <label class="block text-gray-400 mb-1 font-mono">${t.modal_label_name}</label>
+                                    <input type="text" required placeholder="${t.modal_placeholder_name}" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
                                 </div>
                                 <div>
-                                    <label class="block text-gray-400 mb-1 font-mono">Телефон или Email</label>
+                                    <label class="block text-gray-400 mb-1 font-mono">${t.modal_label_phone}</label>
                                     <input type="text" required placeholder="+7 (999) 000-00-00" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
                                 </div>
                                 <div>
-                                    <label class="block text-gray-400 mb-1 font-mono">Комментарий к комплектации</label>
-                                    <textarea rows="3" placeholder="Цвет, количество единиц, спецпакет..." class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+                                    <label class="block text-gray-400 mb-1 font-mono">${t.modal_label_comment}</label>
+                                    <textarea rows="3" placeholder="${t.modal_placeholder_comment}" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400 resize-none"></textarea>
                                 </div>
 
                                 <button type="submit" class="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-orbitron font-bold text-xs transition-all shadow-lg shadow-cyan-500/20 mt-2">
-                                    <i class="fa-solid fa-paper-plane mr-1"></i> Отправить заявку на завод
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> ${t.modal_btn_submit}
                                 </button>
                             </form>
                         </div>
