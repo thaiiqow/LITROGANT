@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OFFICIAL LITROGANT - Automotive Manufacturing</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        litro: {
+                            black: '#0a0c10',
+                            card: '#12161f',
+                            cardHover: '#181e2b',
+                            border: '#232a3b',
+                            accent: '#00f0ff',
+                            accentGlow: 'rgba(0, 240, 255, 0.15)',
+                            red: '#ff2a5f',
+                            gold: '#d4af37'
+                        }
+                    },
+                    fontFamily: {
+                        orbitron: ['Orbitron', 'sans-serif'],
+                        rajdhani: ['Rajdhani', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #07090d;
+            color: #e2e8f0;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glow-accent {
+            box-shadow: 0 0 20px rgba(0, 240, 255, 0.25);
+        }
+        .glow-accent-hover:hover {
+            box-shadow: 0 0 25px rgba(0, 240, 255, 0.4);
+        }
+        .metal-gradient {
+            background: linear-gradient(135deg, #1e2533 0%, #0f131a 100%);
+        }
+        .badge-box {
+            background: linear-gradient(135deg, #00f0ff 0%, #0077ff 100%);
+            clip-path: polygon(0 0, 100% 0, 85% 100%, 0% 100%);
+        }
+        .model-square {
+            background: linear-gradient(135deg, #182030 0%, #0d111a 100%);
+            border: 2px solid #00f0ff;
+            box-shadow: inset 0 0 10px rgba(0, 240, 255, 0.2);
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0c10;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1f293d;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00f0ff;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col justify-between selection:bg-cyan-500 selection:text-black">
+
+    <!-- TOP BAR Header -->
+    <header class="sticky top-0 z-50 bg-[#07090d]/90 backdrop-blur-md border-b border-litro-border/60 transition-all duration-300">
+        <!-- Top Announcement Ribbon -->
+        <div class="bg-gradient-to-r from-cyan-950 via-litro-black to-cyan-950 border-b border-cyan-500/20 py-1.5 px-4 text-center text-xs tracking-widest font-orbitron text-cyan-400 flex items-center justify-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+            <span>OFFICIAL LITROGANT AUTOMOTIVE INDUSTRIAL PLANT</span>
+            <span class="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Brand Logo & Official Badge -->
+                <div class="flex items-center space-x-4 cursor-pointer" onclick="switchCategory('cars')">
+                    <div class="relative">
+                        <div class="w-11 h-11 bg-gradient-to-br from-cyan-400 to-blue-600 rounded-lg flex items-center justify-center font-orbitron font-black text-2xl text-black shadow-lg shadow-cyan-500/20">
+                            L
+                        </div>
+                        <div class="absolute -top-1 -right-1 w-3 h-3 bg-emerald-400 rounded-full border-2 border-black"></div>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <span class="font-orbitron text-2xl font-black tracking-wider text-white">LITROGANT</span>
+                            <span class="bg-cyan-500/10 text-cyan-400 border border-cyan-500/30 text-[10px] font-mono px-1.5 py-0.5 rounded font-bold uppercase tracking-widest hidden sm:inline-block">PLANT OFFICIAL</span>
+                        </div>
+                        <p class="text-[10px] text-gray-400 tracking-widest uppercase font-mono">Automotive Manufacturing Corporation</p>
+                    </div>
+                </div>
+
+                <!-- Main Navigation Tabs -->
+                <nav class="hidden md:flex items-center space-x-1 bg-litro-card p-1.5 rounded-xl border border-litro-border">
+                    <button onclick="switchCategory('cars')" id="tab-cars" class="nav-tab active-tab px-6 py-2.5 rounded-lg font-orbitron text-sm font-semibold transition-all duration-300 flex items-center gap-2 bg-cyan-500 text-black shadow-md shadow-cyan-500/20">
+                        <i class="fa-solid fa-car"></i>
+                        <span data-i18n="cat_cars">Машины</span>
+                    </button>
+                    <button onclick="switchCategory('buses')" id="tab-buses" class="nav-tab px-6 py-2.5 rounded-lg font-orbitron text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-litro-border/50">
+                        <i class="fa-solid fa-bus"></i>
+                        <span data-i18n="cat_buses">Автобусы</span>
+                    </button>
+                    <button onclick="switchCategory('trucks')" id="tab-trucks" class="nav-tab px-6 py-2.5 rounded-lg font-orbitron text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-litro-border/50">
+                        <i class="fa-solid fa-truck-front"></i>
+                        <span data-i18n="cat_trucks">Грузовики</span>
+                    </button>
+                </nav>
+
+                <!-- Language Selector Dropdown -->
+                <div class="relative flex items-center gap-3">
+                    <div class="relative group">
+                        <button id="lang-btn" class="flex items-center gap-2 bg-litro-card hover:bg-litro-border border border-litro-border px-3.5 py-2 rounded-xl text-xs font-semibold text-gray-200 transition-all">
+                            <span id="current-lang-icon" class="text-base flex items-center justify-center">🇷🇺</span>
+                            <span id="current-lang-text" class="font-sans">Русский</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] text-gray-400 ml-1 transition-transform group-hover:rotate-180"></i>
+                        </button>
+
+                        <!-- Dropdown Menu -->
+                        <div class="absolute right-0 mt-2 w-48 bg-litro-card border border-litro-border rounded-xl shadow-2xl py-2 hidden group-hover:block z-50 backdrop-blur-xl">
+                            <button onclick="setLanguage('en')" class="w-full px-4 py-2 text-left text-xs text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 flex items-center gap-3 transition-colors">
+                                <span class="text-base">🇺🇸 / 🇬🇧</span>
+                                <span>English</span>
+                            </button>
+                            <button onclick="setLanguage('ru')" class="w-full px-4 py-2 text-left text-xs text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 flex items-center gap-3 transition-colors">
+                                <span class="text-base">🇷🇺</span>
+                                <span>Русский</span>
+                            </button>
+                            <button onclick="setLanguage('lan')" class="w-full px-4 py-2 text-left text-xs text-gray-300 hover:bg-cyan-500/10 hover:text-cyan-400 flex items-center gap-3 transition-colors">
+                                <img src="https://1s4oyld5dc.ucarecd.net/ee14496c-de13-4fbb-98c8-61248ab5f5d9/" alt="Lanđaĭ flag" class="w-5 h-3.5 object-cover rounded-sm shadow-sm" onerror="this.src='https://placehold.co/20x14/00f0ff/000000?text=LD'">
+                                <span class="font-semibold text-cyan-300">Lanđaĭ</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Mobile Main Nav Tabs -->
+        <div class="md:hidden border-t border-litro-border/40 bg-litro-black/95 px-4 py-2">
+            <div class="grid grid-cols-3 gap-1">
+                <button onclick="switchCategory('cars')" id="mob-tab-cars" class="mob-tab active-mob py-2 text-center text-xs font-orbitron rounded-lg bg-cyan-500 text-black font-bold">
+                    <span data-i18n="cat_cars">Машины</span>
+                </button>
+                <button onclick="switchCategory('buses')" id="mob-tab-buses" class="mob-tab py-2 text-center text-xs font-orbitron rounded-lg bg-litro-card text-gray-300 font-semibold">
+                    <span data-i18n="cat_buses">Автобусы</span>
+                </button>
+                <button onclick="switchCategory('trucks')" id="mob-tab-trucks" class="mob-tab py-2 text-center text-xs font-orbitron rounded-lg bg-litro-card text-gray-300 font-semibold">
+                    <span data-i18n="cat_trucks">Грузовики</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO / BANNER SECTION -->
+    <section class="relative overflow-hidden bg-gradient-to-b from-litro-black via-[#0d121c] to-litro-black py-12 md:py-16 border-b border-litro-border/50">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#00f0ff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-8">
+                <div class="max-w-2xl text-center md:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 text-xs font-mono font-semibold mb-4">
+                        <i class="fa-solid fa-microchip"></i>
+                        <span data-i18n="hero_badge">ПРЕМИАЛЬНОЕ АВТОМОБИЛЕСТРОЕНИЕ NEXT-GEN</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-black font-orbitron uppercase text-white tracking-wide leading-tight mb-4">
+                        <span data-i18n="hero_title1">ЗАВОД</span> <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500">LITROGANT</span>
+                    </h1>
+                    <p class="text-gray-400 text-sm sm:text-base font-sans leading-relaxed mb-6" data-i18n="hero_desc">
+                        Передовое производство автотранспорта, пассажирских автобусов высокого класса и сверхтяжелой грузовой техники. Инженерное совершенство и надежность без компромиссов.
+                    </p>
+                    <div class="flex flex-wrap gap-4 justify-center md:justify-start text-xs font-mono text-gray-400">
+                        <div class="flex items-center gap-2 bg-litro-card px-3 py-2 rounded-lg border border-litro-border">
+                            <i class="fa-solid fa-shield-halved text-cyan-400"></i>
+                            <span data-i18n="stat_warranty">Гарантия 7 лет / 300к км</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-litro-card px-3 py-2 rounded-lg border border-litro-border">
+                            <i class="fa-solid fa-bolt text-cyan-400"></i>
+                            <span data-i18n="stat_tech">EV & Hydro Platforms</span>
+                        </div>
+                        <div class="flex items-center gap-2 bg-litro-card px-3 py-2 rounded-lg border border-litro-border">
+                            <i class="fa-solid fa-globe text-cyan-400"></i>
+                            <span data-i18n="stat_export">Мировой экспорт</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Plant Stats Card -->
+                <div class="w-full md:w-auto bg-litro-card/80 border border-litro-border rounded-2xl p-6 backdrop-blur-xl flex flex-col gap-4 shadow-2xl min-w-[280px]">
+                    <div class="border-b border-litro-border/60 pb-3 flex justify-between items-center">
+                        <span class="text-xs font-mono uppercase text-gray-400" data-i18n="plant_status">Статус завода</span>
+                        <span class="inline-flex items-center gap-1.5 text-xs text-emerald-400 font-semibold">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span> Активен
+                        </span>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4 text-center">
+                        <div class="bg-litro-black/60 p-3 rounded-xl border border-litro-border/40">
+                            <div class="text-2xl font-orbitron font-bold text-cyan-400">450K+</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase" data-i18n="units_produced">Выпущено авто</div>
+                        </div>
+                        <div class="bg-litro-black/60 p-3 rounded-xl border border-litro-border/40">
+                            <div class="text-2xl font-orbitron font-bold text-white">16</div>
+                            <div class="text-[10px] text-gray-400 font-mono uppercase" data-i18n="active_lines">Линий сборки</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT & SUBCATEGORY FILTER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 flex-grow w-full">
+        
+        <!-- Category Title & Subcategory Filter Ribbon -->
+        <div class="flex flex-col gap-6 mb-10">
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-litro-border pb-6">
+                <div>
+                    <h2 id="current-cat-title" class="text-2xl sm:text-4xl font-black font-orbitron text-white uppercase tracking-wider flex items-center gap-3">
+                        <!-- Dynamic Title injected by JS -->
+                    </h2>
+                    <p class="text-gray-400 text-xs sm:text-sm mt-1" data-i18n="filter_hint">Выберите класс техники для просмотра параметров и комплектаций</p>
+                </div>
+                <div class="text-xs font-mono text-cyan-400 bg-cyan-500/10 px-3 py-1.5 rounded-lg border border-cyan-500/20 self-start md:self-auto">
+                    <span id="model-count">0</span> <span data-i18n="models_available">моделей в каталоге</span>
+                </div>
+            </div>
+
+            <!-- Subcategories Bar (Buttons) -->
+            <div id="subcategories-container" class="flex items-center gap-2 overflow-x-auto pb-3 pt-1 scrollbar-none">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+
+        <!-- PRODUCTS GRID -->
+        <div id="products-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <!-- Dynamic Vehicle Cards rendered by JS -->
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="hidden text-center py-16 bg-litro-card/40 rounded-3xl border border-dashed border-litro-border">
+            <i class="fa-solid fa-car-side text-4xl text-gray-600 mb-3"></i>
+            <h3 class="text-lg font-orbitron font-semibold text-gray-300" data-i18n="empty_title">Модели не найдены</h3>
+            <p class="text-xs text-gray-500 mt-1" data-i18n="empty_desc">Попробуйте выбрать другую подкатегорию</p>
+        </div>
+
+    </main>
+
+    <!-- VEHICLE DETAILS & CONFIGURATOR MODAL -->
+    <div id="vehicle-modal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-md flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-litro-card border border-litro-border rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-y-auto shadow-2xl relative text-gray-200">
+            <!-- Modal Close Button -->
+            <button onclick="closeModal()" class="absolute top-5 right-5 w-10 h-10 bg-litro-black/80 hover:bg-cyan-500 hover:text-black border border-litro-border rounded-full flex items-center justify-center text-gray-300 transition-all z-20">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+
+            <div id="modal-content" class="p-6 sm:p-8">
+                <!-- Dynamically populated modal content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-litro-black border-t border-litro-border mt-16 text-xs text-gray-400">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div class="space-y-3">
+                    <div class="flex items-center gap-2">
+                        <div class="w-8 h-8 bg-cyan-400 text-black font-orbitron font-black text-lg rounded flex items-center justify-center">L</div>
+                        <span class="font-orbitron font-bold text-white text-lg">LITROGANT</span>
+                    </div>
+                    <p class="text-gray-500 leading-relaxed" data-i18n="footer_about">
+                        Официальный машиностроительный комбинат LITROGANT. Производство мирового уровня, электромобильность и инновационные платформы.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="cat_cars">Машины</h4>
+                    <ul class="space-y-1.5 text-gray-400 font-sans">
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Городские & Кроссоверы</a></li>
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Электромобили (EV)</a></li>
+                        <li><a href="#" onclick="switchCategory('cars')" class="hover:text-cyan-400">Премиум & Спорт</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="cat_buses">Автобусы & Грузовики</h4>
+                    <ul class="space-y-1.5 text-gray-400 font-sans">
+                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400">Городские Электробусы</a></li>
+                        <li><a href="#" onclick="switchCategory('buses')" class="hover:text-cyan-400">Туристические COACH</a></li>
+                        <li><a href="#" onclick="switchCategory('trucks')" class="hover:text-cyan-400">Тяжелые Грузовики</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-orbitron text-white text-sm uppercase tracking-wider mb-3" data-i18n="footer_contact">Контакты Завода</h4>
+                    <p class="mb-1 text-gray-300 font-mono"><i class="fa-solid fa-building-flag text-cyan-400 mr-2"></i>LITROGANT Central Plant HQ</p>
+                    <p class="mb-1 text-gray-400"><i class="fa-solid fa-envelope text-cyan-400 mr-2"></i>order@litrogant-plant.com</p>
+                    <p class="text-gray-400"><i class="fa-solid fa-phone text-cyan-400 mr-2"></i>+1 (800) 555-LITRO</p>
+                </div>
+            </div>
+            <div class="border-t border-litro-border/50 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-gray-500 font-mono text-[11px]">
+                <p>&copy; 2026 OFFICIAL LITROGANT AUTOMOTIVE INDUSTRIAL PLANT. All rights reserved.</p>
+                <div class="flex gap-4">
+                    <a href="#" class="hover:text-gray-300">Privacy Policy</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-gray-300">Factory Specifications</a>
+                    <span>|</span>
+                    <a href="#" class="hover:text-gray-300">ISO 9001 Certified</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ==========================================
+        // MULTI-LANGUAGE TRANSLATION DATA
+        // ==========================================
+        const translations = {
+            ru: {
+                cat_cars: "Машины",
+                cat_buses: "Автобусы",
+                cat_trucks: "Грузовики",
+                hero_badge: "ПРЕМИАЛЬНОЕ АВТОМОБИЛЕСТРОЕНИЕ NEXT-GEN",
+                hero_title1: "ЗАВОД",
+                hero_desc: "Передовое производство автотранспорта, пассажирских автобусов высокого класса и сверхтяжелой грузовой техники. Инженерное совершенство и надежность без компромиссов.",
+                stat_warranty: "Гарантия 7 лет / 300к км",
+                stat_tech: "EV & Hydro Platforms",
+                stat_export: "Мировой экспорт",
+                plant_status: "Статус завода",
+                units_produced: "Выпущено авто",
+                active_lines: "Линий сборки",
+                filter_hint: "Выберите класс техники для просмотра параметров и комплектаций",
+                models_available: "моделей в наличии",
+                btn_all: "Все модели",
+                price_from: "Цена от",
+                spec_power: "Мощность",
+                spec_range: "Запас / Расход",
+                spec_drive: "Привод",
+                spec_trans: "Трансмиссия",
+                spec_speed: "Макс. скорость",
+                btn_order: "Заказать",
+                btn_details: "Характеристики",
+                empty_title: "Модели не найдены",
+                empty_desc: "Попробуйте выбрать другую подкатегорию",
+                footer_about: "Официальный машиностроительный комбинат LITROGANT. Производство мирового уровня, электромобильность и инновационные платформы.",
+                footer_contact: "Контакты Завода",
+                modal_config_title: "Конфигурация и заказ техники",
+                modal_specs_tab: "Технические данные",
+                modal_order_tab: "Оформить заявку на завод",
+                modal_success_msg: "Заявка успешно принята в отдел продаж LITROGANT!"
+            },
+            en: {
+                cat_cars: "Cars",
+                cat_buses: "Buses",
+                cat_trucks: "Trucks",
+                hero_badge: "PREMIUM NEXT-GEN AUTOMOTIVE MANUFACTURING",
+                hero_title1: "LITROGANT",
+                hero_desc: "State-of-the-art manufacturing of passenger cars, premium public transport buses, and heavy-duty industrial trucks. Uncompromising engineering excellence.",
+                stat_warranty: "7 Years Warranty / 300k km",
+                stat_tech: "EV & Hydrogen Platforms",
+                stat_export: "Global Export",
+                plant_status: "Plant Status",
+                units_produced: "Units Produced",
+                active_lines: "Assembly Lines",
+                filter_hint: "Select a vehicle class to view specifications and options",
+                models_available: "models available",
+                btn_all: "All Models",
+                price_from: "Price from",
+                spec_power: "Power Output",
+                spec_range: "Range / Consumption",
+                spec_drive: "Drivetrain",
+                spec_trans: "Transmission",
+                spec_speed: "Top Speed",
+                btn_order: "Order Now",
+                btn_details: "Specs & Details",
+                empty_title: "No models found",
+                empty_desc: "Try selecting a different subcategory",
+                footer_about: "Official LITROGANT Industrial Automotive Complex. World-class manufacturing, electric mobility, and innovative platforms.",
+                footer_contact: "Plant Contacts",
+                modal_config_title: "Vehicle Configuration & Factory Order",
+                modal_specs_tab: "Technical Specifications",
+                modal_order_tab: "Submit Factory Application",
+                modal_success_msg: "Application successfully submitted to LITROGANT Sales Dept!"
+            },
+            lan: {
+                // 3rd language template (Lanđaĭ) - Fully expandable structure!
+                cat_cars: "Ȃđyĕmxao",
+                cat_buses: "Thoanhxao",
+                cat_trucks: "Ax͜gtratxao",
+                hero_badge: "LANĐAĬ NEXT-GEN AUTOMOBILE",
+                hero_title1: "PLANT",
+                hero_desc: "LITROGANT factory of Lanđaĭ region. High-tech motor vehicles, city buses and heavy trucks.",
+                stat_warranty: "7-Yr / 300k km Lanđaĭ",
+                stat_tech: "Hydro & EV Tech",
+                stat_export: "Export Lanđaĭ",
+                plant_status: "Plant Status",
+                units_produced: "Built Units",
+                active_lines: "Lines Active",
+                filter_hint: "Lanđaĭ vehicle specs and options filter",
+                models_available: "models available",
+                btn_all: "All Lanđaĭ Models",
+                price_from: "Price from",
+                spec_power: "Power",
+                spec_range: "Range",
+                spec_drive: "Drive",
+                spec_trans: "Gearbox",
+                spec_speed: "Max Speed",
+                btn_order: "Order",
+                btn_details: "Specs",
+                empty_title: "No Lanđaĭ models",
+                empty_desc: "Choose another category",
+                footer_about: "Official LITROGANT Lanđaĭ plant manufacturing branch.",
+                footer_contact: "Lanđaĭ HQ",
+                modal_config_title: "Lanđaĭ Factory Order",
+                modal_specs_tab: "Specs",
+                modal_order_tab: "Order",
+                modal_success_msg: "Order received!"
+            }
+        };
+
+        // Current UI State
+        let currentLang = 'ru';
+        let currentCategory = 'cars'; // 'cars' | 'buses' | 'trucks'
+        let currentSubcategory = 'all';
+
+        // ==========================================
+        // SUBCATEGORIES LIST DEFINITIONS
+        // ==========================================
+        const subcategories = {
+            cars: [
+                { id: 'all', ru: 'Все', en: 'All', lan: 'All' },
+                { id: 'city', ru: 'Городские', en: 'City Cars', lan: 'City' },
+                { id: 'crossover', ru: 'Кроссоверы', en: 'Crossovers', lan: 'Crossovers' },
+                { id: 'ev', ru: 'Электромобили', en: 'Electric (EV)', lan: 'Electric EV' },
+                { id: 'premium', ru: 'Премиум-класс', en: 'Premium Class', lan: 'Premium' },
+                { id: 'sport', ru: 'Спортивные', en: 'Sports Cars', lan: 'Sport' }
+            ],
+            buses: [
+                { id: 'all', ru: 'Все', en: 'All', lan: 'All' },
+                { id: 'small', ru: 'Небольшие', en: 'Small / Compact', lan: 'Small' },
+                { id: 'standard', ru: 'Стандарт', en: 'Standard', lan: 'Standard' },
+                { id: 'articulated', ru: 'Сочлененный', en: 'Articulated', lan: 'Articulated' },
+                { id: 'large_city', ru: 'Большой Городской', en: 'Large City Bus', lan: 'Large City' },
+                { id: 'electrobus', ru: 'Электробус', en: 'Electrobus', lan: 'Electrobus' },
+                { id: 'hydrobus', ru: 'Водоробус', en: 'Hydrogen Bus', lan: 'Hydrobus' },
+                { id: 'coach', ru: 'COACH', en: 'COACH (Tourist)', lan: 'COACH' },
+                { id: 'van', ru: 'Van', en: 'Van Passenger', lan: 'Van' }
+            ],
+            trucks: [
+                { id: 'all', ru: 'Все', en: 'All', lan: 'All' },
+                { id: 'light', ru: 'Легкие', en: 'Light Duty', lan: 'Light' },
+                { id: 'medium', ru: 'Средние', en: 'Medium Duty', lan: 'Medium' },
+                { id: 'heavy', ru: 'Тяжелые', en: 'Heavy Duty', lan: 'Heavy' }
+            ]
+        };
+
+        // ==========================================
+        // VEHICLE CATALOG DATA
+        // ==========================================
+        const vehiclesData = [
+            // --- CARS (МАШИНЫ) ---
+            {
+                id: 'car-1',
+                category: 'cars',
+                subcategoryId: 'city',
+                modelCode: 'L1',
+                name: 'LANDRIDER',
+                tagline: 'Универсальный городской хэтчбек нового поколения',
+                price: '$22,500',
+                image: 'https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '180 Л.С.',
+                    range: '6.2 L / 100 км',
+                    drive: 'Передний (FWD)',
+                    trans: '8-АКПП HydroShift',
+                    speed: '215 км/ч'
+                },
+                desc: 'L1 LANDRIDER — это идеальный баланс компактности и комфорта для ежедневных городских поездок. Оснащен интеллектуальным ассистентом LITROGANT Pilot.'
+            },
+            {
+                id: 'car-2',
+                category: 'cars',
+                subcategoryId: 'crossover',
+                modelCode: 'L2',
+                name: 'CITYLITE SUV',
+                tagline: 'Интеллектуальный городской кроссовер',
+                price: '$34,900',
+                image: 'https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '245 Л.С.',
+                    range: '7.5 L / 100 км',
+                    drive: 'Полный (AWD Intelligent)',
+                    trans: '9-АКПП Dual-Clutch',
+                    speed: '230 км/ч'
+                },
+                desc: 'Высокий клиренс, адаптивная пневмоподвеска и увеличенный багажный отсек для любых путешествий.'
+            },
+            {
+                id: 'car-3',
+                category: 'cars',
+                subcategoryId: 'ev',
+                modelCode: 'E1',
+                name: 'VOLTRAN EV',
+                tagline: 'Флагманский электромобиль с мгновенным откликом',
+                price: '$48,000',
+                image: 'https://images.unsplash.com/photo-1560958089-b8a1929cea89?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '450 Л.С.',
+                    range: '620 км (WLTP)',
+                    drive: 'Полный двухмоторный',
+                    trans: '1-ступенчатый редуктор',
+                    speed: '250 км/ч'
+                },
+                desc: '100% электрическая тяга, быстрая зарядка за 18 минут до 80%, панорамная крыша и минималистичный дизайн.'
+            },
+            {
+                id: 'car-4',
+                category: 'cars',
+                subcategoryId: 'premium',
+                modelCode: 'P9',
+                name: 'EXECUTIVE AURA',
+                tagline: 'Представительский седан высшего класса',
+                price: '$89,000',
+                image: 'https://images.unsplash.com/photo-1555215695-3004980ad54e?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '530 Л.С. V8 Biturbo',
+                    range: '9.8 L / 100 км',
+                    drive: 'Полный (AWD)',
+                    trans: '10-АКПП SmoothGlide',
+                    speed: '280 км/ч'
+                },
+                desc: 'Шумоизоляция премиум-уровня, отделка натуральным деревом и премиальная акустика LitroSound с 22 динамиками.'
+            },
+            {
+                id: 'car-5',
+                category: 'cars',
+                subcategoryId: 'sport',
+                modelCode: 'S7',
+                name: 'APEX GT',
+                tagline: 'Трековый суперкар, допущенный к городским дорогам',
+                price: '$115,000',
+                image: 'https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '720 Л.С.',
+                    range: '12.4 L / 100 км',
+                    drive: 'Задний (RWD Sport)',
+                    trans: '7-ступ. Робот RaceSpec',
+                    speed: '335 км/ч'
+                },
+                desc: 'Карбоновый монокок, активное аэродинамическое антикрыло и разгон от 0 до 100 км/ч всего за 2.8 секунды.'
+            },
+
+            // --- BUSES (АВТОБУСЫ) ---
+            {
+                id: 'bus-1',
+                category: 'buses',
+                subcategoryId: 'small',
+                modelCode: 'B1',
+                name: 'URBANFLEX MINI',
+                tagline: 'Компактный маневренный автобус для узких улиц',
+                price: '$52,000',
+                image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '190 Л.С.',
+                    range: '11.5 L / 100 км',
+                    drive: 'Задний',
+                    trans: '6-АКПП HeavyDuty',
+                    speed: '120 км/ч'
+                },
+                desc: 'Вместимость 22 пассажира. Идеально подходит для пригородных и коммерческих челночных маршрутов.'
+            },
+            {
+                id: 'bus-2',
+                category: 'buses',
+                subcategoryId: 'standard',
+                modelCode: 'B2',
+                name: 'CITYLINER 12M',
+                tagline: 'Классический городской низкопольный автобус',
+                price: '$135,000',
+                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '320 Л.С.',
+                    range: '24 L / 100 км',
+                    drive: 'Задний 4x2',
+                    trans: 'Автоматическая ZF',
+                    speed: '95 км/ч'
+                },
+                desc: '12-метровый кузов, низкий пол по всей длине, откидной пандус для маломобильных граждан. Вместимость до 95 человек.'
+            },
+            {
+                id: 'bus-3',
+                category: 'buses',
+                subcategoryId: 'articulated',
+                modelCode: 'B3',
+                name: 'MEGACLIFF 18M',
+                tagline: 'Сочлененный автобус «гармошка» повышенной вместимости',
+                price: '$240,000',
+                image: 'https://images.unsplash.com/photo-1557223562-6c77ef16210f?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '400 Л.С.',
+                    range: '32 L / 100 км',
+                    drive: 'Средний + Задний мост',
+                    trans: 'Автомат Allison',
+                    speed: '85 км/ч'
+                },
+                desc: '18 метров длины, вместимость до 160 пассажиров. Оснащен узлом сочленения с электронной системой стабилизации.'
+            },
+            {
+                id: 'bus-4',
+                category: 'buses',
+                subcategoryId: 'electrobus',
+                modelCode: 'BE-1',
+                name: 'ECO-CITY ELECTRIC',
+                tagline: 'Экологически чистый городской электробус',
+                price: '$210,000',
+                image: 'https://images.unsplash.com/photo-1570125909232-eb263c188f7e?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '350 кВт (475 Л.С.)',
+                    range: '380 км на одном заряде',
+                    drive: 'Электропортальный мост',
+                    trans: 'Прямой привод',
+                    speed: '90 км/ч'
+                },
+                desc: 'Нулевой выброс CO2, ультрабыстрая зарядка от пантографа за 15 минут на конечных станциях.'
+            },
+            {
+                id: 'bus-5',
+                category: 'buses',
+                subcategoryId: 'hydrobus',
+                modelCode: 'BH- hydrogen',
+                name: 'HYDROCELL MAX',
+                tagline: 'Инновационный водородный автобус сверхбольшого запаса хода',
+                price: '$290,000',
+                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '300 кВт Hydro-FuelCell',
+                    range: '650 км на водороде',
+                    drive: 'Электрический AWD',
+                    trans: 'Автоматический контроллер',
+                    speed: '100 км/ч'
+                },
+                desc: 'Выхлоп — чистый водяной пар. Время заправки водородом составляет всего 8 минут.'
+            },
+            {
+                id: 'bus-6',
+                category: 'buses',
+                subcategoryId: 'coach',
+                modelCode: 'BC-7',
+                name: 'GRAND TOUR COACH',
+                tagline: 'Туристический лайнер люкс-класса для дальних рейсов',
+                price: '$195,000',
+                image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '460 Л.С. Euro-6',
+                    range: '18 L / 100 км',
+                    drive: 'Задний 6x2',
+                    trans: '12-АКПП OptiCruise',
+                    speed: '130 км/ч'
+                },
+                desc: 'Анатомические кожаные кресла, индивидуальный климат-контроль, туалетная комната, Wi-Fi и мультимедиа для каждого пассажира.'
+            },
+            {
+                id: 'bus-7',
+                category: 'buses',
+                subcategoryId: 'van',
+                modelCode: 'BV-3',
+                name: 'SHUTTLE VAN',
+                tagline: 'Комфортабельный пассажирский микроавтобус',
+                price: '$44,000',
+                image: 'https://images.unsplash.com/photo-1559297434-fae8a1916a79?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '170 Л.С. Дизель',
+                    range: '8.1 L / 100 км',
+                    drive: 'Задний / Полный',
+                    trans: '6-МКПП / 8-АКПП',
+                    speed: '160 км/ч'
+                },
+                desc: 'Вместимость 16+1 мест. Экономичный турбодизель и трансформируемый VIP-салон.'
+            },
+
+            // --- TRUCKS (ГРУЗОВИКИ) ---
+            {
+                id: 'truck-1',
+                category: 'trucks',
+                subcategoryId: 'light',
+                modelCode: 'T1',
+                name: 'CARGO LITE 35',
+                tagline: 'Легкий коммерческий грузовик для городской логистики',
+                price: '$31,000',
+                image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '160 Л.С.',
+                    range: '9.2 L / 100 км',
+                    drive: 'Задний (RWD)',
+                    trans: '6-МКПП HeavyDuty',
+                    speed: '140 км/ч'
+                },
+                desc: 'Грузоподъемность 3.5 тонны. Разрешен въезд в центр любых мегаполисов без спецпропусков.'
+            },
+            {
+                id: 'truck-2',
+                category: 'trucks',
+                subcategoryId: 'medium',
+                modelCode: 'T2',
+                name: 'MEDIUM HAULER',
+                tagline: 'Среднетоннажный грузовик с изотермическим фургоном',
+                price: '$68,000',
+                image: 'https://images.unsplash.com/photo-1586191582150-136f45228c2e?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '280 Л.С.',
+                    range: '16.5 L / 100 км',
+                    drive: '4x2 Heavy Platform',
+                    trans: '9-АКПП PowerShift',
+                    speed: '120 км/ч'
+                },
+                desc: 'Грузоподъемность 12 тонн. Спальное место для водителя, гидроборт грузоподъемностью 2000 кг.'
+            },
+            {
+                id: 'truck-3',
+                category: 'trucks',
+                subcategoryId: 'heavy',
+                modelCode: 'T8',
+                name: 'TITAN HEAVY TRACTOR',
+                tagline: 'Сверхтяжелый магистральный седельный тягач 6x4',
+                price: '$145,000',
+                image: 'https://images.unsplash.com/photo-1591768793355-74d04bb6608f?auto=format&fit=crop&w=800&q=80',
+                specs: {
+                    power: '640 Л.С. V12 Turbo',
+                    range: '28.0 L / 100 км',
+                    drive: '6x4 Heavy Duty',
+                    trans: '16-ступень Robotised',
+                    speed: '110 км/ч'
+                },
+                desc: 'Предназначен для автопоездов полной массой до 90 тонн. Высокая кабина на пневмоподушках с двойным спальным местом.'
+            }
+        ];
+
+        // ==========================================
+        // INITIALIZATION & EVENT LISTENERS
+        // ==========================================
+        window.onload = function() {
+            renderSubcategories();
+            renderProducts();
+            updateUIByLanguage();
+        };
+
+        // Switch main category (Cars / Buses / Trucks)
+        function switchCategory(cat) {
+            currentCategory = cat;
+            currentSubcategory = 'all';
+
+            // Update main nav active tab styles
+            const tabs = ['cars', 'buses', 'trucks'];
+            tabs.forEach(t => {
+                const el = document.getElementById(`tab-${t}`);
+                const mobEl = document.getElementById(`mob-tab-${t}`);
+                if (t === cat) {
+                    if (el) {
+                        el.className = "nav-tab active-tab px-6 py-2.5 rounded-lg font-orbitron text-sm font-semibold transition-all duration-300 flex items-center gap-2 bg-cyan-500 text-black shadow-md shadow-cyan-500/20";
+                    }
+                    if (mobEl) {
+                        mobEl.className = "mob-tab active-mob py-2 text-center text-xs font-orbitron rounded-lg bg-cyan-500 text-black font-bold";
+                    }
+                } else {
+                    if (el) {
+                        el.className = "nav-tab px-6 py-2.5 rounded-lg font-orbitron text-sm font-semibold transition-all duration-300 flex items-center gap-2 text-gray-300 hover:text-white hover:bg-litro-border/50";
+                    }
+                    if (mobEl) {
+                        mobEl.className = "mob-tab py-2 text-center text-xs font-orbitron rounded-lg bg-litro-card text-gray-300 font-semibold";
+                    }
+                }
+            });
+
+            renderSubcategories();
+            renderProducts();
+        }
+
+        // Render Subcategory Filter Buttons
+        function renderSubcategories() {
+            const container = document.getElementById('subcategories-container');
+            const subList = subcategories[currentCategory] || [];
+            
+            container.innerHTML = subList.map(sub => {
+                const isActive = sub.id === currentSubcategory;
+                const label = sub[currentLang] || sub.ru;
+                const activeClasses = isActive 
+                    ? "bg-cyan-500 text-black font-bold shadow-md shadow-cyan-500/20 border-cyan-400" 
+                    : "bg-litro-card text-gray-300 border-litro-border hover:bg-litro-border hover:text-white";
+
+                return `
+                    <button onclick="setSubcategory('${sub.id}')" class="px-4 py-2 rounded-xl border text-xs font-orbitron whitespace-nowrap transition-all duration-200 ${activeClasses}">
+                        ${label}
+                    </button>
+                `;
+            }).join('');
+
+            // Set main title
+            const titleEl = document.getElementById('current-cat-title');
+            const iconMap = { cars: 'fa-car', buses: 'fa-bus', trucks: 'fa-truck-front' };
+            const catLabel = translations[currentLang][`cat_${currentCategory}`] || currentCategory;
+            
+            titleEl.innerHTML = `<i class="fa-solid ${iconMap[currentCategory]} text-cyan-400"></i> ${catLabel}`;
+        }
+
+        function setSubcategory(subId) {
+            currentSubcategory = subId;
+            renderSubcategories();
+            renderProducts();
+        }
+
+        // Render Products Grid
+        function renderProducts() {
+            const grid = document.getElementById('products-grid');
+            const emptyState = document.getElementById('empty-state');
+            const countEl = document.getElementById('model-count');
+
+            let filtered = vehiclesData.filter(v => v.category === currentCategory);
+            if (currentSubcategory !== 'all') {
+                filtered = filtered.filter(v => v.subcategoryId === currentSubcategory);
+            }
+
+            countEl.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '';
+                emptyState.classList.remove('hidden');
+                return;
+            } else {
+                emptyState.classList.add('hidden');
+            }
+
+            const t = translations[currentLang];
+
+            grid.innerHTML = filtered.map(item => {
+                return `
+                    <div class="bg-litro-card hover:bg-litro-cardHover border border-litro-border hover:border-cyan-500/50 rounded-2xl overflow-hidden transition-all duration-300 flex flex-col justify-between group shadow-xl">
+                        
+                        <!-- Top Image Banner -->
+                        <div class="relative h-52 sm:h-56 overflow-hidden bg-litro-black">
+                            <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100" onerror="this.src='https://placehold.co/800x500/12161f/00f0ff?text=LITROGANT+VEHICLE'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-litro-card via-transparent to-transparent"></div>
+                            
+                            <!-- Price Tag -->
+                            <div class="absolute top-3 right-3 bg-litro-black/80 backdrop-blur-md border border-cyan-500/30 text-cyan-400 px-3 py-1 rounded-full text-xs font-mono font-bold">
+                                ${t.price_from}: ${item.price}
+                            </div>
+                        </div>
+
+                        <!-- Card Body -->
+                        <div class="p-5 sm:p-6 flex-grow flex flex-col justify-between">
+                            
+                            <div>
+                                <!-- CRITICAL REQUIREMENT: BADGE SQUARE MODEL CODE + LARGE MODEL NAME -->
+                                <div class="flex items-center gap-3.5 mb-3">
+                                    <!-- Square Badge for Model Number -->
+                                    <div class="model-square w-12 h-12 rounded-xl flex items-center justify-center font-orbitron font-black text-cyan-400 text-lg sm:text-xl shrink-0">
+                                        ${item.modelCode}
+                                    </div>
+                                    
+                                    <!-- Large Model Name -->
+                                    <div class="overflow-hidden">
+                                        <h3 class="text-xl sm:text-2xl font-black font-orbitron text-white tracking-wider leading-none uppercase truncate">
+                                            ${item.name}
+                                        </h3>
+                                        <p class="text-[11px] font-sans text-gray-400 mt-1 truncate">
+                                            ${item.tagline}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Specifications Box -->
+                                <div class="my-4 bg-litro-black/60 rounded-xl p-3 border border-litro-border/50 space-y-2 text-xs font-sans">
+                                    <div class="flex justify-between items-center border-b border-litro-border/30 pb-1.5">
+                                        <span class="text-gray-400 flex items-center gap-1.5"><i class="fa-solid fa-gauge-high text-cyan-400 text-[10px]"></i> ${t.spec_power}:</span>
+                                        <span class="font-semibold text-gray-200 font-mono">${item.specs.power}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center border-b border-litro-border/30 pb-1.5">
+                                        <span class="text-gray-400 flex items-center gap-1.5"><i class="fa-solid fa-charging-station text-cyan-400 text-[10px]"></i> ${t.spec_range}:</span>
+                                        <span class="font-semibold text-gray-200 font-mono">${item.specs.range}</span>
+                                    </div>
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-gray-400 flex items-center gap-1.5"><i class="fa-solid fa-gear text-cyan-400 text-[10px]"></i> ${t.spec_drive}:</span>
+                                        <span class="font-semibold text-gray-200 font-mono">${item.specs.drive}</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Card Action Buttons -->
+                            <div class="grid grid-cols-2 gap-2.5 mt-4 pt-2 border-t border-litro-border/40">
+                                <button onclick="openModal('${item.id}')" class="w-full py-2.5 px-3 rounded-xl border border-litro-border hover:border-cyan-500/50 bg-litro-black/40 hover:bg-litro-border text-gray-200 text-xs font-orbitron font-semibold transition-all text-center flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-circle-info text-cyan-400"></i> ${t.btn_details}
+                                </button>
+                                <button onclick="openModal('${item.id}', true)" class="w-full py-2.5 px-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black text-xs font-orbitron font-bold transition-all shadow-md shadow-cyan-500/20 text-center flex items-center justify-center gap-1.5">
+                                    <i class="fa-solid fa-cart-shopping"></i> ${t.btn_order}
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                `;
+            }).join('');
+        }
+
+        // ==========================================
+        // LANGUAGE SWITCHER LOGIC
+        // ==========================================
+        function setLanguage(lang) {
+            currentLang = lang;
+            
+            // Update button UI
+            const langText = document.getElementById('current-lang-text');
+            const langIcon = document.getElementById('current-lang-icon');
+
+            if (lang === 'ru') {
+                langText.textContent = 'Русский';
+                langIcon.innerHTML = '🇷🇺';
+            } else if (lang === 'en') {
+                langText.textContent = 'English';
+                langIcon.innerHTML = '🇺🇸/🇬🇧';
+            } else if (lang === 'lan') {
+                langText.textContent = 'Lanđaĭ';
+                langIcon.innerHTML = `<img src="https://1s4oyld5dc.ucarecd.net/ee14496c-de13-4fbb-98c8-61248ab5f5d9/" class="w-4 h-3 inline-block object-cover rounded-sm" onerror="this.src='https://placehold.co/20x14/00f0ff/000000?text=LD'">`;
+            }
+
+            updateUIByLanguage();
+            renderSubcategories();
+            renderProducts();
+        }
+
+        function updateUIByLanguage() {
+            const t = translations[currentLang] || translations.ru;
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (t[key]) {
+                    el.textContent = t[key];
+                }
+            });
+        }
+
+        // ==========================================
+        // MODAL LOGIC
+        // ==========================================
+        function openModal(vehicleId, isOrderFocus = false) {
+            const modal = document.getElementById('vehicle-modal');
+            const content = document.getElementById('modal-content');
+            const vehicle = vehiclesData.find(v => v.id === vehicleId);
+
+            if (!vehicle) return;
+
+            const t = translations[currentLang];
+
+            content.innerHTML = `
+                <div class="flex items-center gap-4 mb-6 pb-4 border-b border-litro-border">
+                    <div class="model-square w-14 h-14 rounded-2xl flex items-center justify-center font-orbitron font-black text-cyan-400 text-2xl shrink-0">
+                        ${vehicle.modelCode}
+                    </div>
+                    <div>
+                        <h2 class="text-2xl sm:text-3xl font-black font-orbitron text-white uppercase tracking-wider">${vehicle.name}</h2>
+                        <p class="text-xs text-cyan-400 font-mono">${t.modal_config_title}</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <img src="${vehicle.image}" alt="${vehicle.name}" class="w-full h-56 object-cover rounded-2xl border border-litro-border mb-4">
+                        <p class="text-xs text-gray-300 leading-relaxed mb-4">${vehicle.desc}</p>
+                        
+                        <div class="bg-litro-black/80 rounded-2xl p-4 border border-litro-border text-xs space-y-2">
+                            <h4 class="font-orbitron text-cyan-400 font-bold mb-2 uppercase text-[11px]">${t.modal_specs_tab}</h4>
+                            <div class="flex justify-between py-1 border-b border-litro-border/30">
+                                <span class="text-gray-400">${t.spec_power}:</span>
+                                <span class="text-white font-mono">${vehicle.specs.power}</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-litro-border/30">
+                                <span class="text-gray-400">${t.spec_range}:</span>
+                                <span class="text-white font-mono">${vehicle.specs.range}</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-litro-border/30">
+                                <span class="text-gray-400">${t.spec_drive}:</span>
+                                <span class="text-white font-mono">${vehicle.specs.drive}</span>
+                            </div>
+                            <div class="flex justify-between py-1 border-b border-litro-border/30">
+                                <span class="text-gray-400">${t.spec_trans}:</span>
+                                <span class="text-white font-mono">${vehicle.specs.trans}</span>
+                            </div>
+                            <div class="flex justify-between py-1">
+                                <span class="text-gray-400">${t.spec_speed}:</span>
+                                <span class="text-white font-mono">${vehicle.specs.speed}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Factory Order Form -->
+                    <div class="bg-litro-black/60 rounded-2xl p-5 border border-litro-border flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-orbitron font-bold text-white text-base mb-1">${t.modal_order_tab}</h3>
+                            <p class="text-xs text-gray-400 mb-4">Базовая стоимость завода: <span class="text-cyan-400 font-mono font-bold">${vehicle.price}</span></p>
+
+                            <form id="order-form" onsubmit="handleOrderSubmit(event)" class="space-y-3 text-xs">
+                                <div>
+                                    <label class="block text-gray-400 mb-1 font-mono">Ваше имя / Компания</label>
+                                    <input type="text" required placeholder="ООО 'АвтоТранс' или имя" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 mb-1 font-mono">Телефон или Email</label>
+                                    <input type="text" required placeholder="+7 (999) 000-00-00" class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400">
+                                </div>
+                                <div>
+                                    <label class="block text-gray-400 mb-1 font-mono">Комментарий к комплектации</label>
+                                    <textarea rows="3" placeholder="Цвет, количество единиц, спецпакет..." class="w-full bg-litro-card border border-litro-border rounded-xl px-3 py-2 text-white focus:outline-none focus:border-cyan-400 resize-none"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full py-3 rounded-xl bg-cyan-500 hover:bg-cyan-400 text-black font-orbitron font-bold text-xs transition-all shadow-lg shadow-cyan-500/20 mt-2">
+                                    <i class="fa-solid fa-paper-plane mr-1"></i> Отправить заявку на завод
+                                </button>
+                            </form>
+                        </div>
+                        <div id="order-success" class="hidden text-center py-4 text-emerald-400 font-mono text-xs bg-emerald-500/10 border border-emerald-500/30 rounded-xl mt-3">
+                            <i class="fa-solid fa-circle-check text-base mb-1"></i><br>
+                            ${t.modal_success_msg}
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+            }, 10);
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('vehicle-modal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300);
+        }
+
+        function handleOrderSubmit(e) {
+            e.preventDefault();
+            document.getElementById('order-form').style.display = 'none';
+            document.getElementById('order-success').classList.remove('hidden');
+            setTimeout(() => {
+                closeModal();
+            }, 2500);
+        }
+    </script>
+</body>
+</html>
